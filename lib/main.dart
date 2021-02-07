@@ -38,15 +38,14 @@ class _MyHomePageState extends State<MyHomePage> {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [Color(0xFF5F627D), Color(0xFF313347)],
+          colors: [
+            Color(0xFF5F627D),
+            Color(0xFF313347),
+          ],
         ),
       ),
       child: Scaffold(
-        drawer: Drawer(
-          child: Container(
-            color: Colors.transparent,
-          ),
-        ),
+        drawer: Drawer(),
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           elevation: 0,
@@ -54,19 +53,18 @@ class _MyHomePageState extends State<MyHomePage> {
           actions: [
             IconButton(
               icon: Stack(children: [
-                Icon(Icons.notifications_none_outlined),
                 Positioned(
-                  width: 8,
-                  top: -16,
-                  right: 2,
-                  bottom: 0,
+                  right: 0,
                   child: Container(
+                    width: 8,
+                    height: 8,
                     decoration: BoxDecoration(
                       color: Colors.red,
                       shape: BoxShape.circle,
                     ),
                   ),
                 ),
+                Icon(Icons.notifications_none_outlined),
               ]),
               onPressed: () {},
             )
@@ -93,10 +91,14 @@ class _MyHomePageState extends State<MyHomePage> {
                       spreadRadius: -5,
                     )
                   ],
-                  gradient: LinearGradient(begin: Alignment.topLeft, end: Alignment.bottomRight, colors: [
-                    Color(0xFF08AEEA),
-                    Color(0xFF2AF598),
-                  ]),
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      Color(0xFF08AEEA),
+                      Color(0xFF2AF598),
+                    ],
+                  ),
                 ),
               ),
               Row(
@@ -109,26 +111,22 @@ class _MyHomePageState extends State<MyHomePage> {
                       fontSize: 18,
                     ),
                   ),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Icon(
-                      Icons.add_circle_outline,
-                      color: Colors.white,
-                    ),
+                  Icon(
+                    Icons.add_circle_outline,
+                    color: Colors.white,
                   ),
                 ],
               ),
               Padding(
-                padding: EdgeInsets.only(bottom: 16),
+                padding: EdgeInsets.only(
+                  bottom: 16,
+                ),
               ),
               Expanded(
                 child: ListView.separated(
                   itemCount: 10,
-                  separatorBuilder: (BuildContext context, int index) => Divider(
-                    height: 0,
-                  ),
+                  separatorBuilder: (BuildContext context, int index) => Divider(),
                   itemBuilder: (context, index) => ListTile(
-                    contentPadding: EdgeInsets.symmetric(vertical: 8),
                     leading: Container(
                       width: 40,
                       height: 40,
@@ -150,7 +148,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           children: [
                             Text(
                               'Bitcoin',
-                              style: TextStyle(color: Colors.white, fontWeight: FontWeight.w500),
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                             Text(
                               '\$1233.45',
@@ -167,7 +168,10 @@ class _MyHomePageState extends State<MyHomePage> {
                             children: [
                               Text(
                                 '0.00041',
-                                style: TextStyle(color: Colors.grey, fontSize: 14),
+                                style: TextStyle(
+                                  color: Colors.grey,
+                                  fontSize: 14,
+                                ),
                               ),
                               Row(
                                 children: [
